@@ -1,12 +1,10 @@
 import axios from 'axios';
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
+import { getGreetings } from '../../api/index';
 
-const BASE_URL = 'http://localhost:3000/api/greetings';
-const http = axios.create({ baseURL: BASE_URL });
-
-export const getGreetings = createAsyncThunk('greeting/getGreetings', async () => {
+export const fetchGreetings = createAsyncThunk('greeting/getGreetings', async () => {
   try {
-    const response = await http.get();
+    const response = await getGreetings();
     return response.data;
   } catch (error) {
     return error;
@@ -22,14 +20,14 @@ const greetingSlice = createSlice({
 
   extraReducers(builder) {
     builder
-      .addCase(getGreetings.pending, (state) => {
+      .addCase(fetchGreetings.pending, (state) => {
         state.isLoading = 'loading';
       })
-      .addCase(getGreetings.fulfilled, (state, action) => {
+      .addCase(fetchGreetings.fulfilled, (state, action) => {
         state.isLoading = 'succeeded';
         state.greetings = action.payload;
       })
-      .addCase(getGreetings.rejected, (state) => {
+      .addCase(fetchGreetings.rejected, (state) => {
         state.isLoading = 'failed';
       });
   },
