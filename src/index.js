@@ -5,7 +5,6 @@ import ReactDOM from 'react-dom/client';
 import store from './redux/configureStore';
 import App from './App';
 
-
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
@@ -16,4 +15,3 @@ root.render(
     </BrowserRouter>
   </React.StrictMode>,
 );
-

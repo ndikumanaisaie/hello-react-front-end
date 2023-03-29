@@ -1,6 +1,5 @@
-import axios from 'axios';
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
-import { getGreetings } from '../../api/index';
+import getGreetings from '../../api/index';
 
 export const fetchGreetings = createAsyncThunk('greeting/getGreetings', async () => {
   try {
@@ -14,21 +13,21 @@ export const fetchGreetings = createAsyncThunk('greeting/getGreetings', async ()
 const greetingSlice = createSlice({
   name: 'greeting',
   initialState: {
-    isLoading: 'idle' || 'loading' || 'succeeded' || 'failed',
+    isLoading: false,
     greetings: [],
   },
 
   extraReducers(builder) {
     builder
       .addCase(fetchGreetings.pending, (state) => {
-        state.isLoading = 'loading';
+        state.isLoading = true;
       })
       .addCase(fetchGreetings.fulfilled, (state, action) => {
-        state.isLoading = 'succeeded';
+        state.isLoading = false;
         state.greetings = action.payload;
       })
       .addCase(fetchGreetings.rejected, (state) => {
-        state.isLoading = 'failed';
+        state.isLoading = false;
       });
   },
 });
