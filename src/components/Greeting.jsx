@@ -11,11 +11,9 @@ const Greeting = () => {
 
   const greetings = useSelector((state) => state.greetings.greetings);
   console.log(greetings);
-  const greetingArray = greetings.map((greet) => <li key={greet.id}><p>{greet.greeting}</p></li>);
-
   return (
     <div>
-      <ul>{greetingArray}</ul>
+      <p>{greetings.greeting}</p>
     </div>
   );
 };
