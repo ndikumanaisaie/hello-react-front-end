@@ -52,16 +52,14 @@ In order to run this project you need:
 
   * Make sure you have Ruby installed in your system. You can install it [here](https://www.ruby-lang.org/en/documentation/installation/)
 
-  * Get started with [Ruby on Rails](https://guides.rubyonrails.org/getting_started.html).
-
-  * Make sure you have [PostgreSQL](https://www.postgresql.org/) installed and running.
+  * Get started with [React](https://react.dev/).
 
 ### Setup
 
 Clone this repository to your desired folder or download the Zip folder:
 
 ```
-git clone https://github.com/ndikumanaisaie/Hallo_World.git
+git clone https://github.com/ndikumanaisaie/hello-react-front-end.git
 ```
 
   * Navigate to the location of the folder in your machine:
@@ -86,6 +84,10 @@ To run the project, follow these instructions:
 
   *  Run `npm start`
   *  In your browser, go to `http://localhost:3000`.
+  
+### Below is the link to the pull request for the backend part of the project
+
+  * [Back End](https://github.com/ndikumanaisaie/hello-rails-back-end/pull/1)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
